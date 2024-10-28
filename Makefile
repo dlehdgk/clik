@@ -19,7 +19,8 @@ PREFIX := $(shell pwd)
 
 # set the path of the cfitsio lib. 
 # bewared that cfitsio must have been compiled with the option "make shared"
-CFITSIOPATH := /usr/local
+#CFITSIOPATH := /usr/local
+CFITSIOPATH :=/opt/apps/testapps/el7/software/staging/CFITSIO/3.48-GCCcore-9.3.0
 #CFITSIOPATH := /softs/cfitsio/3.24
 # you have a CFITSIO lib in a weird location, also set those
 CFITSIO_INCPATH := $(CFITSIOPATH)/include
@@ -62,13 +63,15 @@ LAPACKLIBPATHMKL =
 #some example
 #MKLROOT = /softs/intel/mkl/10.2.6.038/
 # on mkl 10.3 or more
-LAPACKLIBPATHMKL = -L$(MKLROOT)/lib/intel64
+#LAPACKLIBPATHMKL = -L$(MKLROOT)/lib/intel64
 # on mkl 10.2
 #LAPACKLIBPATHMKL = -L$(MKLROOT)/lib/em64t
 
 #if you want to point to your own version of lapack set the following variables
 #LAPACK = -L/some/path -lsomefortranlapack -lsomedependencyforyourlapack
 #LAPACKLIBPATH = /some/path
+LAPACK = -L/opt/apps/testapps/el7/software/staging/OpenBLAS/0.3.9-GCC-9.3.0/bin -lopenblas
+LAPACKLIBPATH = /opt/apps/testapps/el7/software/staging/OpenBLAS/0.3.9-GCC-9.3.0/lib
 
 
 # pretty colors (comment to remove pretty colors or try to change echo to echo -e)
